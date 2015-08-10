@@ -1,4 +1,5 @@
 Event.destroy_all
+Emotion.destroy_all
 
 Event1 = Event.create(title: "Pizza Addicts",  location: "10417 Armory Ave Kensington MD", datetime: "August 26, 2015", emotion_level:1, free_food: true, free_drink: true)
 
@@ -21,3 +22,9 @@ Event8 = Event.create(title:"Angular JS DC",  location: "1445 New York Ave Nw, W
 Event9 = Event.create(title: "Washington DC Comedy",  location: "1040 New York, Washington, DC", datetime: "August 17, 2015", emotion_level:2, free_food: false, free_drink: false)
 
 Event10 = Event.create(title: "Rails DC",  location: "1080 Connecticut Ave., Washington, DC", datetime: "August 17, 2015", emotion_level:3, free_food: false, free_drink: true)
+
+level_one = Emotion.create(name: "Relaxed")
+
+level_two = Emotion.create(name: "Social")
+
+level_three = Emotion.create(name: "Active")
