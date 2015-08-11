@@ -1,2 +1,9 @@
 <!-- show emotions, and events by that emotion -->
-<h1>Events By Emotion</h1>
+<% @emotion.events.each do |event| %>
+
+<div class="event">
+  <h2> <%= "#{event.title}" %> </h2>
+  <h5> <%= "#{event.datetime}" %> </h5>
+  <h5> <%= "#{event.location}" %> </h5>
+</div>
+<% end %>

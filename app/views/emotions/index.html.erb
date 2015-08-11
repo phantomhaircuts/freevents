@@ -1,2 +1,9 @@
 <!-- Emotion Index / Splash Page -->
-<h1>Home</h1>
+<h1>What kind of free event are you looking for?</h1>
+  <% @emotions.each do |emotion| %>
+  <h3 class="emotion-name" >
+    <a href="/emotions/<%=emotion.id%>">
+      <%= emotion.name %>
+    </a>
+  </h3>
+<%end%>
