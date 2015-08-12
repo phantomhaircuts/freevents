@@ -1,2 +1,19 @@
 <!-- this is the show page -->
-<h1> Event Page </h1>
+<div class="content">
+  <h1> Event Page </h1>
+
+
+<div class="eventshow">
+  <div class="map">
+  </div>
+<!-- <h2><%= @event.title %> <a href="/events/<%= @event.id %>/edit">(edit)</a></h2> -->
+<h3>Emotion Type: <%= @event.emotion.name %></h3><br>
+Event: <%= @event.title%></br><br>
+Location: <%= @event.location %></br><br>
+Date: <%= @event.datetime %></br><br>
+Free food: <%= @event.free_food %></br><br>
+Free drinks: <%= @event.free_drink %></br>
+<div>
+
+
+</div>
