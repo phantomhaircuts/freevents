@@ -1,11 +1,9 @@
 <!-- this is the show page -->
 
-  <div class="content">
-  <div class="eventdetail">
-    <div class="map">
+  <div class="map">
   </div>
-
-
+  <div class="content">
+<div class="eventdetail event<%= @event.emotion_id%>">
     Event: <br><%= @event.title%></br><br>
     Event Type:<br> <%= @event.emotion.name %><br><br>
     Location:<br> <%= @event.location %></br><br>
@@ -30,6 +28,6 @@
 
 
       <a href="/emotions/"><i class="fa fa-chevron-left"></i></a>
-      <div>
+    </div>
 
   </div>
