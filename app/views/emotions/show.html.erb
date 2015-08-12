@@ -4,9 +4,14 @@
 <div class="content">
   <% @emotion.events.each do |event| %>
   <div class="event">
+
+
+      <%= link_to "#{event.title} (#{event.location})", emotion_event_path(@emotion, event) %>
+
     <h2> <%= "#{event.title}" %> </h2>
     <h5> <%= "#{event.datetime}" %> </h5>
     <h5> <%= "#{event.location}" %> </h5>
+    
   </div>
   <% end %>
 </div>

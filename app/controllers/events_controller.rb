@@ -11,7 +11,7 @@ class EventsController < ApplicationController
  end
 
  def show
-   @emotion = Emotion.find(params[:region_id])
+  #  @emotion = Emotion.find(params[:id])
    @event = Event.find(params[:id])
  end
 
