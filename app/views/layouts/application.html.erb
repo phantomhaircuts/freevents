@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Freevents</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +10,7 @@
 <body>
 
   <nav class="fixed-nav-bar">
+  <a href="/"><i class="fa fa-chevron-left nav-link"></i></a>
   <% if current_user %>
   <h3 class="nav-link"><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
   <% else %>

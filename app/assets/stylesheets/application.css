@@ -44,6 +44,7 @@
   margin: 10px;
   padding: 30px;
   color: white;
+  font-size: 25px;
 }
 
 .map{
@@ -54,37 +55,116 @@
   background-image: url(http://www.freelargeimages.com/wp-content/uploads/2014/11/Google_map-6.png)
 }
 
-.emotion-name {
-}
-
-.event {
+.events {
   width: 100%;
   padding: 20px;
   margin: 0 0 10px auto;
+  color: white;
 }
+
+.event1 {
+  background-color: #2CCAEB;
+}
+
+.event2 {
+  background-color: #00C479;
+}
+
+.event3 {
+  background-color: #DE332E;
+}
+
+/*.event div:nth-of-type(even){
+  background-color: #00C479;
+}
+
+.event div:nth-of-type(odd){
+  background-color: #32A177;
+}*/
+
 .emo-index {
   margin: 10px;
   padding: 30px;
-}
-div.emo-index:nth-child(1) {
-    background-color: #2CCAEB;
-    color: white;
+  color: white;
 }
 
+#emo1 {
+  background-color: #2CCAEB;
+}
+
+#emo2 {
+  background-color: #00C479;
+}
+
+#emo3 {
+  background-color: #DE332E;
+}
 
 a {
   margin-top: 20px;
   text-decoration: none;
+  color: #758F95;
 }
 a:visited {
-  /*color: white;*/
+  color: #758F95;
 }
 
 .fixed-nav-bar {
-  bottom: 0;
   width: 100%;
-  display: inline;
+  height: 100px;
 }
 .nav-link {
   display: inline;
+  color: #758F95;
+}
+.nav-link a:visited {
+  color: #758F95;
+}
+
+h5 {
+  font-weight: 200;
+}
+
+i{
+  display: block;
+}
+
+.new_user{
+  margin: 5%;
+}
+#user_email{
+  height: 40px;
+  width: 25%;
+  border: none;
+  border-bottom: 3px solid #758F95;
+  outline: none;
+  margin: 1%;
+}
+
+#user_password{
+  height: 40px;
+  width: 25%;
+  border: none;
+  border-bottom: 3px solid #758F95;
+  outline: none;
+  margin: 1%;
+}
+
+#user_password_confirmation{
+  height: 40px;
+  width: 25%;
+  border: none;
+  border-bottom: 3px solid #758F95;
+  outline: none;
+  margin: 1%;
+}
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+.content {
+  width: 100%;
+  }
 }

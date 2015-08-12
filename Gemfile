@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+# font awesome icon gem
+gem 'font-awesome-sass'
 
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

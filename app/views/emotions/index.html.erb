@@ -7,7 +7,7 @@
 
     <% @emotions.each do |emotion| %>
     <a href="/emotions/<%=emotion.id%>">
-      <h3 class="emotion-name" >
+      <h3 class="emotion-name" id="emo<%=emotion.id%>"  >
         <div class="emo-index">
           <%= emotion.name %>
       </h3>
