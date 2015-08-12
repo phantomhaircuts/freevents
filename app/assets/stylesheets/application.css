@@ -94,3 +94,28 @@ a:visited {
   background-color: #2CCAEB;
   color: white;
 }
+
+.backbutton {
+  background-color: #758F95;
+height: 50;
+width: 50;
+color: #FFFFFF;
+font-size: 36px;
+font-family: "FontAwesome”;
+}
+
+
+.glassgreen {
+  color:green;
+}
+
+.glassred {
+  color:red;
+}
+
+.eventdetail{
+  margin: 10px;
+  padding: 0px;
+  background-color: #2CCAEB;
+  color: white;
+}
