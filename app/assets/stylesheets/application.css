@@ -51,6 +51,7 @@
   height: 500px;
   background-color: blue;
   margin-bottom: 20px;
+  background-image: url(http://www.freelargeimages.com/wp-content/uploads/2014/11/Google_map-6.png)
 }
 
 .emotion-name {
@@ -80,7 +81,10 @@ a:visited {
 }
 
 .fixed-nav-bar {
-bottom: 0;
-width: 100%;
-
+  bottom: 0;
+  width: 100%;
+  display: inline;
+}
+.nav-link {
+  display: inline;
 }
