@@ -11,19 +11,13 @@
 
 
     <% if @event.free_food %>
-      <div class="glassgreen"><i class="fa fa-cutlery"></i>
-      </div>
+      <i class="fa fa-cutlery"></i>
       <% else %>
-      <div class="glassred"><i class="fa fa-cutlery"></i>
-      </div>
     <% end %>
 
     <% if @event.free_drink %>
-      <div class="glassgreen"><i class="fa fa-glass"></i> </br>
-    </div>
+      <i class="fa fa-glass"></i> </br>
       <% else %>
-      <div class="glassred"><i class="fa fa-glass"></i> </br>
-    </div>
     <% end %>
 
 

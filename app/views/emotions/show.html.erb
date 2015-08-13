@@ -1,5 +1,5 @@
 <!-- show emotions, and events by that emotion -->
-<div class="map">
+<div id="map">
 </div>
 
 <div class="content">
@@ -14,3 +14,55 @@
   </div>
   <% end %>
 </div>
+<script type="text/javascript">
+
+function initMap() {
+ map = new google.maps.Map(document.getElementById('map'), {
+   center: {lat: 38.9047, lng: -77.0164},
+   zoom: 8
+ });
+
+ var geocoder = new google.maps.Geocoder();
+
+ //this is a closure. a closure is a function that creates a function that remembers
+ //the environemnt in which it was created. Here, the inner function "remembers" that
+ //the title is the specific title that was passed to createCallbackFunction.
+ //this way it doesn't look for a variable named "title" that could have changed
+ //in value.
+ var createCallbackFunction = function(title, id) {
+   var callback = function(results) {
+     //check if there is a result, if so use the first result returned by geocode
+     //results is a list of search results based on how google defined it
+     if(results[0]){
+       //this is where position is in results
+       var myLatLng = results[0].geometry.location;
+       var marker = new google.maps.Marker({
+         position: myLatLng,
+         map: map,
+         title: title
+       });
+
+       //add click event to marker to change url
+       marker.addListener('click', function() {
+         var url = window.location.href;
+         url = url + '/events/' + id;
+         window.location.href = url;
+      });
+
+     }
+   }
+   return callback;
+ }
+
+<% @emotion.events.each do |event| %>
+ var location = "<%= "#{event.location}" %>";
+ var title = "<%= "#{event.title}" %>";
+ var id = "<%= "#{event.id}" %>";
+
+ geocoder.geocode( { 'address': location}, createCallbackFunction(title, id));
+<% end %>
+}
+
+   </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-25EOkB2SBSONGOgMdxRPXPtYuHicogk&callback=initMap">
+   </script>
