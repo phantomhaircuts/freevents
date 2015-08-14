@@ -26,6 +26,7 @@
   font-size:20px;
   color: white;
 
+
 }
 
 body{
@@ -216,28 +217,21 @@ display: block;
 }
 
 @media (min-width: 80em){
-  .content {
-    margin: 0 auto;
-    width: 50%;
-    /*margin-top: 10px;*/
-    padding-top: 45px;
-    padding-left: 70px;
-    padding-right: 70px;
-    height: 100%;
-  }
 }
 
 @media (max-width: 80em){
-.emo-index {
-  height: 20vh;
-}
-.fixed-nav-bar {
+
+  .fixed-nav-bar {
   display: none;
   }
-#map{
-  height: 10em;
-}
-.ed {
-  height: 50vh;
-}
+
+  .emo-index {
+    height: 20vh;
+  }
+  #map{
+    height: 10em;
+  }
+  .ed {
+    height: 55vh;
+  }
 }
