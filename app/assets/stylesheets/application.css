@@ -230,8 +230,5 @@ display: block;
 @media (max-width: 80em){
 .fixed-nav-bar {
   display: none;
-}
-
-
-}
+  }
 }
