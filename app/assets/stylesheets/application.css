@@ -39,8 +39,8 @@ body{
 }
 
 #prompt {
-  height: 40%;
-  padding: 0 20px 0 20px;
+  height: 21vh;
+  /*padding: 0 20px 0 20px;*/
   background-color: #758F95;
   color: white;
   box-shadow: none;
@@ -211,7 +211,7 @@ li {
   list-style-type: none;
 }
 .backbutton {
-padding-top: 10px;
+padding-top: 20vh;
 display: block;
 }
 
@@ -228,10 +228,16 @@ display: block;
 }
 
 @media (max-width: 80em){
+.emo-index {
+  height: 20vh;
+}
 .fixed-nav-bar {
   display: none;
   }
 #map{
   height: 10em;
+}
+.ed {
+  height: 50vh;
 }
 }

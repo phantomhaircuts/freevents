@@ -4,7 +4,7 @@
 
   <% @emotion.events.each do |event| %>
     <div class="emo-index events event<%=event.emotion_id%>">
-        <li> <%= link_to "#{event.title} (#{event.location})", emotion_event_path(@emotion, event), class: "event-link event-header" %></li>
+        <li> <%= link_to "#{event.title}", emotion_event_path(@emotion, event), class: "event-link event-header" %></li>
         <li><%= "#{event.datetime.strftime("%I:%M%p")}" %>
           <% if @event.free_food %>
             <i class="fa fa-cutlery"></i>

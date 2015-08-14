@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+before_action :authenticate_user!, only: [:new]
  def new
    @emotion = Emotion.find(params[:region_id])
    @event = Event.new
