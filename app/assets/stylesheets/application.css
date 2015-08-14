@@ -53,6 +53,8 @@
   margin-bottom: 0px;
 }
 
+
+
 .events {
   width: 100%;
   padding: 20px;
@@ -112,10 +114,10 @@
 a {
   margin-top: 20px;
   text-decoration: none;
-  color: #758F95;
+  color: white;
 }
 a:visited {
-  color: #758F95;
+  color: white;
 }
 
 .fixed-nav-bar {
@@ -182,14 +184,6 @@ color: #FFFFFF ;
 font-size: 36px;
 }
 
-
-.glassgreen {
- color:green;
-}
-
-.glassred {
- color:red;
-}
 
 .eventdetail{
  margin: 10px;

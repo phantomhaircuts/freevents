@@ -7,7 +7,17 @@
   <div class="events">
     <div class="events event<%=event.emotion_id%>">
         <h2> <%= link_to "#{event.title} (#{event.location})", emotion_event_path(@emotion, event), class: "event-link" %></h2>
-        <h5> <%= "#{event.datetime.strftime("%a %b %d")}" %> <i class="fa fa-glass"></i>  <i class="fa fa-cutlery"></i></h5>
+        <h5> <%= "#{event.datetime.strftime("%a %b %d")}" %>
+          <% if @event.free_food %>
+            <i class="fa fa-cutlery"></i>
+            <% else %>
+          <% end %>
+
+          <% if @event.free_drink %>
+            <i class="fa fa-glass"></i> </br>
+            <% else %>
+          <% end %>
+        </h5>
         <h5> <%= "#{event.location}" %> </h5>
 
     </div>
@@ -18,8 +28,8 @@
 
 function initMap() {
  map = new google.maps.Map(document.getElementById('map'), {
-   center: {lat: 38.9047, lng: -77.0164},
-   zoom: 8
+   center: {lat: 38.9407, lng: -77.0164},
+   zoom: 11
  });
 
  var geocoder = new google.maps.Geocoder();
@@ -62,7 +72,6 @@ function initMap() {
  geocoder.geocode( { 'address': location}, createCallbackFunction(title, id));
 <% end %>
 }
-
    </script>
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-25EOkB2SBSONGOgMdxRPXPtYuHicogk&callback=initMap">
    </script>
