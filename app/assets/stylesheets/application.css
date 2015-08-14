@@ -231,4 +231,7 @@ display: block;
 .fixed-nav-bar {
   display: none;
   }
+#map{
+  height: 10em;
+}
 }
