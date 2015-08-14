@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 # font awesome icon gem
+gem 'rails_12factor'
 gem 'font-awesome-sass'
 
 gem 'devise'

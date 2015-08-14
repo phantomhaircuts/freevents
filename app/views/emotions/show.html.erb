@@ -2,12 +2,10 @@
 <div id="map">
 </div>
 
-<div class="content">
   <% @emotion.events.each do |event| %>
-  <div class="events">
-    <div class="events event<%=event.emotion_id%>">
-        <h2> <%= link_to "#{event.title} (#{event.location})", emotion_event_path(@emotion, event), class: "event-link" %></h2>
-        <h5> <%= "#{event.datetime.strftime("%a %b %d")}" %>
+    <div class="emo-index events event<%=event.emotion_id%>">
+        <li> <%= link_to "#{event.title} (#{event.location})", emotion_event_path(@emotion, event), class: "event-link event-header" %></li>
+        <li><%= "#{event.datetime.strftime("%I:%M%p")}" %>
           <% if @event.free_food %>
             <i class="fa fa-cutlery"></i>
             <% else %>
@@ -17,13 +15,12 @@
             <i class="fa fa-glass"></i> </br>
             <% else %>
           <% end %>
-        </h5>
-        <h5> <%= "#{event.location}" %> </h5>
-
+        </li>
+        <li> <%= "#{event.location}" %> </li>
     </div>
-  </div>
   <% end %>
-</div>
+
+
 <script type="text/javascript">
 
 function initMap() {

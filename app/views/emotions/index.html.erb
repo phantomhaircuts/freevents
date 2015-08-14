@@ -1,17 +1,14 @@
 <!-- Emotion Index / Splash Page -->
-<div class="content">
-
-  <div id="prompt">
+  <div class="emo-index" id="prompt">
   <h1>What kind of event would you like to attend?</h1>
   </div>
 
     <% @emotions.each do |emotion| %>
     <a href="/emotions/<%=emotion.id%>">
-      <h3 class="emotion-name" id="emo<%=emotion.id%>"  >
+      <div class="emotion-name" id="emo<%=emotion.id%>"  >
         <div class="emo-index">
-          <%= emotion.name %>
-      </h3>
+          <h1><%= emotion.name %></h1>
+      </div>
     </a>
   <%end%>
   </div>
-</div>

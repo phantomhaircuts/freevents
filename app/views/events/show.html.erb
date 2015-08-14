@@ -1,27 +1,69 @@
 <!-- this is the show page -->
+<div class="mapcontainer">
+<div id="map">
+</div>
+</div>
+  <div class="emo-index eventdetail event<%= @event.emotion_id%>">
+      <li><h1><%= @event.title%></h1></li>
+      <li> <%= @event.location %></li>
+      <%= @event.datetime.strftime("%I:%M%p") %>
+      <% if @event.free_food %>
+        <i class="fa fa-cutlery"></i>
+        <% else %>
+      <% end %>
 
-  <div class="map">
+      <% if @event.free_drink %>
+        <i class="fa fa-glass"></i>
+        <% else %>
+      <% end %>
+      </li>
   </div>
-  <div class="content">
-<div class="eventdetail event<%= @event.emotion_id%>">
-    Event: <br><%= @event.title%></br><br>
-    Event Type:<br> <%= @event.emotion.name %><br><br>
-    Location:<br> <%= @event.location %></br><br>
-    Date: <br><%= @event.datetime.strftime("%a %b %d") %></br><br>
-
-
-    <% if @event.free_food %>
-      <i class="fa fa-cutlery"></i>
-      <% else %>
-    <% end %>
-
-    <% if @event.free_drink %>
-      <i class="fa fa-glass"></i> </br>
-      <% else %>
-    <% end %>
-
-
-      <a href="/emotions/"><i class="fa fa-chevron-left"></i></a>
+  <div class="emo-index eventdetail event event-description<%= @event.emotion_id%>">
+    <li><%= @event.description %></li>
+    <a class="backbutton" href="/emotions/<%= @event.emotion_id%>"><i class="fa fa-chevron-left"></i></a>
     </div>
+    <script type="text/javascript">
 
-  </div>
+    function initMap() {
+     map = new google.maps.Map(document.getElementById('map'), {
+       center: {lat: 38.9407, lng: -77.0164},
+       zoom: 11
+     });
+
+     var geocoder = new google.maps.Geocoder();
+
+     //this is a closure. a closure is a function that creates a function that remembers
+     //the environemnt in which it was created. Here, the inner function "remembers" that
+     //the title is the specific title that was passed to createCallbackFunction.
+     //this way it doesn't look for a variable named "title" that could have changed
+     //in value.
+     var createCallbackFunction = function(title, id) {
+       var callback = function(results) {
+         //check if there is a result, if so use the first result returned by geocode
+         //results is a list of search results based on how google defined it
+         if(results[0]){
+           //this is where position is in results
+           var myLatLng = results[0].geometry.location;
+           var marker = new google.maps.Marker({
+             position: myLatLng,
+             map: map,
+             title: title
+           });
+
+           //add click event to marker to change url
+           marker.addListener('click', function() {
+             var url = window.location.href;
+             url = url + '/events/' + id;
+             window.location.href = url;
+          });
+
+         }
+       }
+       return callback;
+     }
+
+     geocoder.geocode( { 'address': location}, createCallbackFunction(title, id));
+    }
+       </script>
+       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-25EOkB2SBSONGOgMdxRPXPtYuHicogk&callback=initMap">
+       </script>
